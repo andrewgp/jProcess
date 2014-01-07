@@ -9,7 +9,7 @@ import jProcess.ProcessDetailsFactory;
  * Gets process status from the 'ps' command. Should work on all unix-based machines.
  *
  */
-public abstract class UnixProcessDetailsFactory<T extends UnixProcessDetails> extends ProcessDetailsFactory<T> {
+public class ProcessStatusDetailsFactory<T extends ProcessDetails> extends ProcessDetailsFactory<T> {
 
 	@Override
 	public List<Integer> listPIDs() {

@@ -2,14 +2,18 @@ package jProcess.linux;
 
 import jProcess.ProcessDetails;
 import jProcess.ProcessDetails.State;
-import jProcess.unix.UnixProcessDetailsFactory;
+import jProcess.ProcessDetailsFactory;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class LinuxProcessDetailsFactory extends UnixProcessDetailsFactory<LinuxProcessDetails> {
+/**
+ * Uses 'procfs' to get more detail than a standard unix 'ps' query.
+ *
+ */
+public class LinuxProcessDetailsFactory extends ProcessDetailsFactory<LinuxProcessDetails> {
 	
 	static String PROCFS_PATH = "/proc";
 	
