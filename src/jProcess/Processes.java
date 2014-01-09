@@ -1,6 +1,7 @@
 package jProcess;
 
-import jProcess.linux.LinuxProcessDetailsFactory;
+import jProcess.unix.UnixProcessDetails;
+import jProcess.unix.UnixProcessDetailsFactory;
 import jProcess.util.OS;
 
 import java.util.List;
@@ -15,15 +16,17 @@ public class Processes {
 			LOCAL_OS = OS.detect();
 			
 			switch (LOCAL_OS) {
+			case UNIX:
 			case LINUX:
-				PROCESS_FACTORY = new LinuxProcessDetailsFactory();
-				break;
 			case MAC:
 			case SOLARIS:
-			case UNIX:
+				PROCESS_FACTORY = new UnixProcessDetailsFactory<UnixProcessDetails>();
+				break;
 			case WINDOWS:
 				break;
 			}
+			
+			PROCESS_FACTORY.checkSupported();
 		}
 	}
 	

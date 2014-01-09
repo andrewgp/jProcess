@@ -12,6 +12,8 @@ import java.util.Map;
 
 public abstract class ProcessDetailsFactory<T extends ProcessDetails> {
 
+	public abstract void checkSupported();
+	
 	public abstract List<Integer> listPIDs();
 	public abstract List<T> listProcesses(boolean updateAll);
 	

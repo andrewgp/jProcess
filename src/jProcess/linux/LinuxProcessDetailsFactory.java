@@ -194,4 +194,10 @@ public class LinuxProcessDetailsFactory extends ProcessDetailsFactory<LinuxProce
 		// TODO
 		return false;
 	}
+
+	@Override
+	public void checkSupported() {
+		// TODO Auto-generated method stub
+		
+	}
 }
